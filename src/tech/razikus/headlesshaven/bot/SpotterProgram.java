@@ -88,12 +88,12 @@ public class SpotterProgram extends AbstractProgram{
             ));
             this.getManager().brodcastFromProgram(this.getProgname(), new CommandTypeWrapper(
                     "message",
-                    "Sleeping for 60 seconds before finding again"
+                    "Sleeping for 15 minutes before finding again"
             ));
 
 
             try {
-                Thread.sleep(1000 * 60);
+                Thread.sleep(1000 * 900);
             } catch (InterruptedException e) {
                 setShouldClose(true);
             }
@@ -171,7 +171,7 @@ public class SpotterProgram extends AbstractProgram{
 
             counter++;
 
-            if(!found && counter > 60) {
+            if(!found && counter > 900) {
 
                 this.getManager().brodcastFromProgram(this.getProgname(), new CommandTypeWrapper(
                         "state",
